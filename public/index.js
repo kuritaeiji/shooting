@@ -10,13 +10,43 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/etcs/consts.js":
+/*!*******************************!*\
+  !*** ./src/js/etcs/consts.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst consts1 = {\n  CANVAS_W: 600,\n  CANVAS_H: 600,\n  can: document.getElementById('can'),\n  vcan: document.createElement('canvas'),\n  GAME_SPEED: 1000 / 60\n};\nconst consts2 = {\n  FIELD_W: consts1.CANVAS_W,\n  FIELD_H: consts1.CANVAS_H,\n  SCREEN_W: consts1.CANVAS_W / 2,\n  SCREEN_H: consts1.CANVAS_H / 2,\n  con: consts1.can.getContext('2d'),\n  vcon: consts1.vcan.getContext('2d')\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Object.assign(consts1, consts2));\n\n//# sourceURL=webpack://shooting/./src/js/etcs/consts.js?");
+
+/***/ }),
+
+/***/ "./src/js/etcs/functions.js":
+/*!**********************************!*\
+  !*** ./src/js/etcs/functions.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  rand: function (min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n  }\n});\n\n//# sourceURL=webpack://shooting/./src/js/etcs/functions.js?");
+
+/***/ }),
+
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/main.css */ \"./src/css/main.css\");\n\n\n//# sourceURL=webpack://shooting/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/main.css */ \"./src/css/main.css\");\n/* harmony import */ var _etcs_consts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./etcs/consts */ \"./src/js/etcs/consts.js\");\n/* harmony import */ var _models_Star__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./models/Star */ \"./src/js/models/Star.js\");\n\n\n\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.can.width = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W;\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.can.height = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H;\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan.width = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_W;\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan.height = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H;\n\nfunction gameLoop() {\n  // アップデート\n  stars.forEach(star => {\n    star.update();\n  }); // 描画\n  // 全て消す\n\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcon.clearRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H);\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.clearRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H); // フィールドを描画\n\n  stars.forEach(star => {\n    star.draw();\n  }); // キャンバスを描画\n\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillStyle = 'black';\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H);\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.drawImage(_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan, 0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_H, 0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H);\n} // 初期描画\n\n\nlet stars = [];\n\nfor (let i = 0; i < 500; i++) {\n  stars.push(new _models_Star__WEBPACK_IMPORTED_MODULE_2__.default());\n}\n\nstars.forEach(star => {\n  star.draw();\n});\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillStyle = 'black';\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H);\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.drawImage(_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan, 0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_H, 0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H); // ゲームループ\n\nsetInterval(gameLoop, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.GAME_SPEED);\n\n//# sourceURL=webpack://shooting/./src/js/main.js?");
+
+/***/ }),
+
+/***/ "./src/js/models/Star.js":
+/*!*******************************!*\
+  !*** ./src/js/models/Star.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _etcs_functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../etcs/functions */ \"./src/js/etcs/functions.js\");\n/* harmony import */ var _etcs_consts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../etcs/consts */ \"./src/js/etcs/consts.js\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (class {\n  constructor() {\n    this.x = _etcs_functions__WEBPACK_IMPORTED_MODULE_0__.default.rand(0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_W) << 8;\n    this.y = _etcs_functions__WEBPACK_IMPORTED_MODULE_0__.default.rand(0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H) << 8;\n    this.vy = _etcs_functions__WEBPACK_IMPORTED_MODULE_0__.default.rand(200, 500);\n    this.color = _etcs_functions__WEBPACK_IMPORTED_MODULE_0__.default.rand(0, 1) ? '#66f' : '#aef';\n    this.size = _etcs_functions__WEBPACK_IMPORTED_MODULE_0__.default.rand(1, 2);\n  }\n\n  update() {\n    if (this.y > _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H << 8) {\n      this.y = 0;\n    }\n\n    this.y += this.vy;\n    this.color = _etcs_functions__WEBPACK_IMPORTED_MODULE_0__.default.rand(0, 1) ? '#66f' : '#aef';\n  }\n\n  draw() {\n    _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcon.fillStyle = this.color;\n    _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcon.fillRect(this.x >> 8, this.y >> 8, this.size, this.size);\n  }\n\n});\n\n//# sourceURL=webpack://shooting/./src/js/models/Star.js?");
 
 /***/ }),
 
@@ -26,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
   \****************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"html {\\n  height: 100%;\\n}\\n\\nbody {\\n  height: 100%;\\n  width: 100%;\\n  display: flex;\\n  justify-content: center;\\n  align-items: center;\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://shooting/./src/css/main.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"/* html {\\n  height: 100%;\\n}\\n\\nbody {\\n  height: 100%;\\n  width: 100%;\\n  display: flex;\\n  justify-content: center;\\n  align-items: center;\\n} */\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://shooting/./src/css/main.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
