@@ -1,5 +1,6 @@
 import functions from '../etcs/functions';
 import consts from '../etcs/consts';
+import vars from '../etcs/vars';
 
 export default class {
   constructor() {
@@ -17,7 +18,12 @@ export default class {
   }
 
   draw() {
-    consts.vcon.fillStyle = this.color;
-    consts.vcon.fillRect(this.x >> 8, this.y >> 8, this.size, this.size);
+    let px = this.x >> 8;
+    let py = this.y >> 8;
+    // スクリーン内の時のみ描画
+    if (vars.field.camera.x < px && px < vars.field.camera.x + consts.SCREEN_W && vars.field.camera.y < py && py < vars.field.camera.y + consts.SCREEN_H) {
+      consts.vcon.fillStyle = this.color;
+      consts.vcon.fillRect(px, py, this.size, this.size);
+    }
   }
 }

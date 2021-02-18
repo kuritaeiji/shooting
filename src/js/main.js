@@ -17,7 +17,8 @@ function gameLoop() {
     // キャンバスを描画
     consts.con.fillStyle = 'black';
     consts.con.fillRect(0, 0, consts.CANVAS_W, consts.CANVAS_H);
-    consts.con.drawImage(consts.vcan, 0, 0, consts.SCREEN_W, consts.SCREEN_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);
+    consts.con.drawImage(consts.vcan, vars.field.camera.x, vars.field.camera.y, consts.SCREEN_W, consts.SCREEN_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);
+    // consts.con.drawImage(consts.vcan, 0, 0, consts.FIELD_W, consts.FIELD_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);  デバッグ用のフィールド全体をキャンバスに描画
 }
 
 function gameInit() {

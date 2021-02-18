@@ -1,3 +1,5 @@
+import Field from '../models/field';
+
 export default {
-  field: null
+  field: new Field()
 }
