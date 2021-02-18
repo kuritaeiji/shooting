@@ -23,6 +23,14 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'eslint-loader'
+      },
+      {
+        test: /\.scss/,
+        use: [
+          { loader: 'style' },
+          { loader: 'css' },
+          { loader: 'scss' }
+        ]
       }
     ]
   }
