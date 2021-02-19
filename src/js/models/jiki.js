@@ -1,6 +1,7 @@
 import Sprite from './sprite';
 import consts from '../etcs/consts';
 import vars from '../etcs/vars';
+import JikiBullet from './jiki_bullet';
 
 export default class {
   constructor() {
@@ -15,6 +16,8 @@ export default class {
     this.animeCount = 0;
     this.animePerComa = 10;
 
+    this.reloadCount = 0;
+    this.reloadTime = 20 // 20フレームに一発
   }
 
   update() {
@@ -35,6 +38,9 @@ export default class {
     // アニメーション
     this.bringAnimeCountToZero();
     this.calculateSpriteNum();
+
+    // 弾発射
+    this.fireBullet();
   }
 
   draw() {
@@ -62,6 +68,18 @@ export default class {
     if (!vars.keys.ArrowLeft && !vars.keys.ArrowRight) {
       if (0 < this.animeCount) { this.animeCount--; }
       if (this.animeCount < 0) { this.animeCount++; }
+    }
+  }
+
+  fireBullet() {
+    if (this.reloadCount > 0) { this.reloadCount--; }
+
+    if (vars.keys.Space && this.reloadCount === 0) {
+      vars.field.jiki_bullets.push(new JikiBullet(this.x - (9 << 8), this.y, -100, -5 << 8));
+      vars.field.jiki_bullets.push(new JikiBullet(this.x - (3 << 8), this.y, -30, -5 << 8));
+      vars.field.jiki_bullets.push(new JikiBullet(this.x + (3 << 8), this.y, 30, -5 << 8));
+      vars.field.jiki_bullets.push(new JikiBullet(this.x + (9 << 8), this.y, 100, -5 << 8));
+      this.reloadCount = this.reloadTime;
     }
   }
 }
