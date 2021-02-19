@@ -46,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/main.css */ \"./src/css/main.css\");\n/* harmony import */ var _etcs_consts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./etcs/consts */ \"./src/js/etcs/consts.js\");\n/* harmony import */ var _etcs_vars__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./etcs/vars */ \"./src/js/etcs/vars.js\");\n/* harmony import */ var _models_field__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./models/field */ \"./src/js/models/field.js\");\n\n\n\n\n\nfunction gameLoop() {\n  // アップデート\n  _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.update(); // 描画\n  // 全て消す\n\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcon.clearRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H);\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.clearRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H); // フィールドを描画\n\n  _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.draw(); // キャンバスを描画\n\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillStyle = 'black';\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H); // consts.con.drawImage(consts.vcan, vars.field.camera.x, vars.field.camera.y, consts.SCREEN_W, consts.SCREEN_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);\n\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.drawImage(_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan, 0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H, 0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H);\n}\n\nfunction gameInit() {\n  // フィールド新規作成、描画\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcon.clearRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H);\n  _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field = new _models_field__WEBPACK_IMPORTED_MODULE_3__.default();\n  _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.draw(); // キャンバスに描画\n\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillStyle = 'black';\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H);\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.drawImage(_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan, _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.camera.x, _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.camera.y, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_H, 0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H);\n}\n\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.can.width = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W;\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.can.height = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H;\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan.width = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_W;\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan.height = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H;\ngameInit();\nsetInterval(gameLoop, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.GAME_SPEED);\n\n//# sourceURL=webpack://shooting/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/main.css */ \"./src/css/main.css\");\n/* harmony import */ var _etcs_consts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./etcs/consts */ \"./src/js/etcs/consts.js\");\n/* harmony import */ var _etcs_vars__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./etcs/vars */ \"./src/js/etcs/vars.js\");\n/* harmony import */ var _models_field__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./models/field */ \"./src/js/models/field.js\");\n/* harmony import */ var _models_sprite__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./models/sprite */ \"./src/js/models/sprite.js\");\n\n\n\n\n\n\nfunction gameLoop() {\n  // アップデート\n  _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.update(); // 描画\n  // 全て消す\n\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcon.clearRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H);\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.clearRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H); // フィールドを描画\n\n  _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.draw();\n  _models_sprite__WEBPACK_IMPORTED_MODULE_4__.default.Sprites[2].draw(0, 0); // キャンバスを描画\n\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillStyle = 'black';\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H);\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.drawImage(_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan, _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.camera.x, _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.camera.y, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_H, 0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H); // consts.con.drawImage(consts.vcan, 0, 0, consts.FIELD_W, consts.FIELD_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);  // デバッグ用のフィールド全体をキャンバスに描画\n}\n\nfunction gameInit() {\n  // フィールド新規作成、描画\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcon.clearRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H);\n  _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field = new _models_field__WEBPACK_IMPORTED_MODULE_3__.default();\n  _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.draw(); // キャンバスに描画\n\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillStyle = 'black';\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.fillRect(0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H);\n  _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.con.drawImage(_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan, _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.camera.x, _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.camera.y, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_H, 0, 0, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H);\n}\n\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.can.width = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_W;\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.can.height = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.CANVAS_H;\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan.width = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_W;\n_etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcan.height = _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.FIELD_H;\ngameInit();\nsetInterval(gameLoop, _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.GAME_SPEED);\n\n//# sourceURL=webpack://shooting/./src/js/main.js?");
 
 /***/ }),
 
@@ -67,6 +67,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _star__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./star */ \"./src/js/models/star.js\");\n/* harmony import */ var _camera__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./camera */ \"./src/js/models/camera.js\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (class {\n  constructor() {\n    this.stars = [];\n\n    for (let i = 0; i < 500; i++) {\n      this.stars.push(new _star__WEBPACK_IMPORTED_MODULE_0__.default());\n    }\n\n    this.camera = new _camera__WEBPACK_IMPORTED_MODULE_1__.default();\n  }\n\n  update() {\n    this.stars.forEach(star => {\n      star.update();\n    });\n  }\n\n  draw() {\n    this.stars.forEach(star => {\n      star.draw();\n    });\n  }\n\n});\n\n//# sourceURL=webpack://shooting/./src/js/models/field.js?");
+
+/***/ }),
+
+/***/ "./src/js/models/sprite.js":
+/*!*********************************!*\
+  !*** ./src/js/models/sprite.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _images_sprite_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../images/sprite.png */ \"./src/images/sprite.png\");\n/* harmony import */ var _etcs_consts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../etcs/consts */ \"./src/js/etcs/consts.js\");\n/* harmony import */ var _etcs_vars__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../etcs/vars */ \"./src/js/etcs/vars.js\");\n\nlet image = new Image();\nimage.src = _images_sprite_png__WEBPACK_IMPORTED_MODULE_0__.default;\n\n\n\nclass Sprite {\n  constructor(x, y, w, h, r) {\n    this.x = x;\n    this.y = y;\n    this.w = w;\n    this.h = h;\n    this.r = r;\n  }\n\n  draw(x, y) {\n    // x, yはスプライトの中心を指し示すため、左上隅の座標を算出\n    let px = (x >> 8) - this.w / 2;\n    let py = (y >> 8) - this.h / 2; // スクリーン内のみ描写\n\n    if (_etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.camera.x - this.w < px && _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.camera.x + _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_W && _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.camera.y - this.h < py && py < _etcs_vars__WEBPACK_IMPORTED_MODULE_2__.default.field.camera.y + _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.SCREEN_H) {\n      _etcs_consts__WEBPACK_IMPORTED_MODULE_1__.default.vcon.drawImage(image, this.x, this.y, this.w, this.h, px, py, this.w, this.h);\n    }\n  }\n\n  static get Sprites() {\n    return [new Sprite(0, 0, 22, 42, 16), // 左 0\n    new Sprite(23, 0, 33, 42, 18), // 左 1\n    new Sprite(57, 0, 43, 42, 21), // 真ん中 2\n    new Sprite(101, 0, 33, 42, 18), // 右 3\n    new Sprite(135, 0, 21, 42, 15), // 右 4\n    new Sprite(0, 50, 3, 7, 3), // 弾 5\n    new Sprite(4, 50, 5, 5, 3), // 弾 6\n    new Sprite(3, 42, 16, 5), // 噴射 左 7\n    new Sprite(29, 42, 21, 5), // 噴射 左 8\n    new Sprite(69, 42, 19, 5), // 噴射 正面 9\n    new Sprite(108, 42, 21, 5), // 噴射 右 10\n    new Sprite(138, 42, 16, 5), // 噴射 右 11\n    new Sprite(4, 62, 24, 27, 12), // 敵 小 12\n    new Sprite(206, 58, 69, 73, 36), // 敵 大 13\n    new Sprite(32, 49, 8, 8, 4), // 敵弾 小 14\n    new Sprite(42, 47, 12, 12, 6), // 敵弾 大 15\n    new Sprite(5, 352, 8, 8), // ヒット 16\n    new Sprite(21, 346, 19, 20), // ヒット 17\n    new Sprite(46, 343, 28, 27), // ヒット 18\n    new Sprite(81, 343, 31, 29), // ヒット 19\n    new Sprite(118, 341, 33, 32) // ヒット 20\n    ];\n  }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sprite);\n\n//# sourceURL=webpack://shooting/./src/js/models/sprite.js?");
 
 /***/ }),
 
@@ -97,6 +107,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module) => {
 
 eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (cssWithMappingToString) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join(\"\");\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery, dedupe) {\n    if (typeof modules === \"string\") {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, \"\"]];\n    }\n\n    var alreadyImportedModules = {};\n\n    if (dedupe) {\n      for (var i = 0; i < this.length; i++) {\n        // eslint-disable-next-line prefer-destructuring\n        var id = this[i][0];\n\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = [].concat(modules[_i]);\n\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        // eslint-disable-next-line no-continue\n        continue;\n      }\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\n//# sourceURL=webpack://shooting/./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./src/images/sprite.png":
+/*!*******************************!*\
+  !*** ./src/images/sprite.png ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"sprite.png\");\n\n//# sourceURL=webpack://shooting/./src/images/sprite.png?");
 
 /***/ }),
 
@@ -170,6 +190,18 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -184,6 +216,26 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

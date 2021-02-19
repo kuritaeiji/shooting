@@ -2,6 +2,7 @@ import '../css/main.css';
 import consts from './etcs/consts';
 import vars from './etcs/vars';
 import Field from './models/field';
+import Sprite from './models/sprite'
 
 function gameLoop() {
   // アップデート
@@ -18,7 +19,7 @@ function gameLoop() {
     consts.con.fillStyle = 'black';
     consts.con.fillRect(0, 0, consts.CANVAS_W, consts.CANVAS_H);
     consts.con.drawImage(consts.vcan, vars.field.camera.x, vars.field.camera.y, consts.SCREEN_W, consts.SCREEN_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);
-    // consts.con.drawImage(consts.vcan, 0, 0, consts.FIELD_W, consts.FIELD_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);  デバッグ用のフィールド全体をキャンバスに描画
+    // consts.con.drawImage(consts.vcan, 0, 0, consts.FIELD_W, consts.FIELD_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);  // デバッグ用のフィールド全体をキャンバスに描画
 }
 
 function gameInit() {
