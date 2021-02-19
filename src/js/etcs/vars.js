@@ -1,5 +1,6 @@
 import Field from '../models/field';
 
 export default {
-  field: new Field()
+  field: new Field(),
+  keys: {}
 }
