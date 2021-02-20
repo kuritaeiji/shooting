@@ -31,7 +31,7 @@ export default class {
   }
 
   draw() {
-    Sprite.Sprites[this.enemyType.spriteNum].draw(this.x, this.y);
+    Sprite.Sprites[this.enemyType.spriteNum()].draw(this.x, this.y);
   }
 
   // private
