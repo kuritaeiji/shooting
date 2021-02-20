@@ -1,5 +1,5 @@
-import consts from './consts';
 import Sprite from '../models/sprite';
+import consts from './consts';
 
 export default {
   rand: function (min, max) {
@@ -17,5 +17,14 @@ export default {
     let dy = (bullet.y - target.y) >> 8;
 
     return Math.pow(br, 2) + Math.pow(tr, 2) > Math.pow(dx, 2) + Math.pow(dy, 2)
+  },
+
+  drawText(text, yFromCenter) {
+    consts.con.font = '20px "Inpact"';
+    consts.con.fillStyle = 'white';
+    let w = consts.con.measureText(text).width
+    let x = consts.CANVAS_W / 2 - w /2;
+    let y = consts.CANVAS_H / 2 + yFromCenter;
+    consts.con.fillText(text, x, y);
   }
 }

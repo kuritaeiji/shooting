@@ -15,6 +15,10 @@ class PinkEnemy {
   spriteNum() {
     return 13;
   }
+
+  score() {
+    return 150;
+  }
 }
 
 export default PinkEnemy;

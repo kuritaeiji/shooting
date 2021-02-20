@@ -15,6 +15,10 @@ class YellowEnemy {
   spriteNum() {
     return 12;
   }
+
+  score() {
+    return 100;
+  }
 }
 
 export default YellowEnemy;

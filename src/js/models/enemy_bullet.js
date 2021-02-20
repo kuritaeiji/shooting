@@ -25,6 +25,7 @@ export default class {
     if (!jiki.invincible && functions.checkCollision(this, jiki, jiki.spriteNum)) {
       jiki.receiveBullet()
       this.kill = true;
+      if (jiki.life === 0) { vars.gameOver = true; }
     }
   }
 

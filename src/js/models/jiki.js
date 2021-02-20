@@ -24,6 +24,8 @@ export default class {
     this.damageTime = 10; // 10フレームだけ画面を赤くする
     this.invincible = 0;
     this.invincibleTime = 60;
+
+    this.score = 0
   }
 
   update() {

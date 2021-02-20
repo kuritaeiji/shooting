@@ -22,6 +22,7 @@ export default class {
       if (functions.checkCollision(this, enemy, enemy.enemyType.spriteNum())) {
         this.kill = true;
         enemy.kill = true;
+        vars.field.jiki.score += enemy.enemyType.score();
       }
     })
   }
