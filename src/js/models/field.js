@@ -17,7 +17,7 @@ export default class {
 
     this.enemies = [];
     this.enemyCounter = 0;
-    this.enemyTime = 20; // 20フレームに1回敵出現
+    this.enemyTime = 10; // 10フレームに1回敵出現
 
     this.enemyBullets = [];
   }
@@ -28,8 +28,8 @@ export default class {
     this.stars.forEach((star) => { star.update() });
     this.jiki.update();
     this.camera.update(this.jiki);
-    this.jiki_bullets.forEach((b) => { b.update() });
     this.enemies.forEach((enemy) => { enemy.update() });
+    this.jiki_bullets.forEach((b) => { b.update() });
     this.enemyBullets.forEach((b) => { b.update() });
   }
 

@@ -14,10 +14,16 @@ export default class {
     this.flameSpriteNum = 9;
     this.speed = 1000;
     this.animeCount = 0;
-    this.animePerComa = 10;
+    this.animePerComa = 5;
 
     this.reloadCount = 0;
     this.reloadTime = 20 // 20フレームに一発
+
+    this.life = 5;
+    this.damage = 0;
+    this.damageTime = 10; // 10フレームだけ画面を赤くする
+    this.invincible = 0;
+    this.invincibleTime = 60;
   }
 
   update() {
@@ -41,13 +47,19 @@ export default class {
 
     // 弾発射
     this.fireBullet();
+
+    // カウント
+    this.count();
   }
 
   draw() {
-    Sprite.Sprites[this.spriteNum].draw(this.x, this.y);
     let flameX = this.x;
     let flameY = this.y + (23 << 8);
-    Sprite.Sprites[this.flameSpriteNum].draw(flameX, flameY);
+    // 無敵時に点滅表示
+    if (this.invincible % 2 === 0) {
+      Sprite.Sprites[this.spriteNum].draw(this.x, this.y);
+      Sprite.Sprites[this.flameSpriteNum].draw(flameX, flameY);
+    }
   }
 
   // private
@@ -81,5 +93,16 @@ export default class {
       vars.field.jiki_bullets.push(new JikiBullet(this.x + (9 << 8), this.y, 100, -5 << 8));
       this.reloadCount = this.reloadTime;
     }
+  }
+
+  receiveBullet() {
+    this.life--;
+    this.damage = this.damageTime;
+    this.invincible = this.invincibleTime;
+  }
+
+  count() {
+    if (this.invincible > 0) { this.invincible--; }
+    if (this.damage > 0) { this.damage--; }
   }
 }

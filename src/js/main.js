@@ -27,7 +27,8 @@ function gameLoop() {
     vars.field.draw();
 
     // キャンバスを描画
-    consts.con.fillStyle = 'black';
+    
+    vars.field.jiki.damage ? consts.con.fillStyle = 'red' : consts.con.fillStyle = 'black' // 自機がダメージを受けた時のみ、キャンバス全体を赤くする
     consts.con.fillRect(0, 0, consts.CANVAS_W, consts.CANVAS_H);
     consts.con.drawImage(consts.vcan, vars.field.camera.x, vars.field.camera.y, consts.SCREEN_W, consts.SCREEN_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);
     // consts.con.drawImage(consts.vcan, 0, 0, consts.FIELD_W, consts.FIELD_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);  // デバッグ用のフィールド全体をキャンバスに描画
@@ -39,6 +40,7 @@ function gameLoop() {
       consts.con.fillText('Enemy:' + vars.field.enemies.length, 20, 20);
       consts.con.fillText('Bullet:' + vars.field.jiki_bullets.length, 20, 40)
       consts.con.fillText('EBullet:' + vars.field.enemyBullets.length, 20, 60);
+      consts.con.fillText('Life:' + vars.field.jiki.life, 20, 80)
     }
     
 }
