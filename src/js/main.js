@@ -31,6 +31,14 @@ function gameLoop() {
     consts.con.fillRect(0, 0, consts.CANVAS_W, consts.CANVAS_H);
     consts.con.drawImage(consts.vcan, vars.field.camera.x, vars.field.camera.y, consts.SCREEN_W, consts.SCREEN_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);
     // consts.con.drawImage(consts.vcan, 0, 0, consts.FIELD_W, consts.FIELD_H, 0, 0, consts.CANVAS_W, consts.CANVAS_H);  // デバッグ用のフィールド全体をキャンバスに描画
+
+    // デバッグ情報をキャンバスに描画
+    if (consts.DEBUG) {
+      consts.con.font = '20px "Inpact"';
+      consts.con.fillStyle = 'white';
+      consts.con.fillText('Enemy:' + vars.field.enemies.length, 20, 20);
+    }
+    
 }
 
 // キーが押されているかの判定をkeysプロパティーに代入

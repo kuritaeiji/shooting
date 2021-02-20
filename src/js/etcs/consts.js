@@ -5,7 +5,8 @@ const consts1 = {
   can: document.getElementById('can'),
   vcan: document.createElement('canvas'),
 
-  GAME_SPEED: 1000 / 60
+  GAME_SPEED: 1000 / 60,
+  DEBUG: true
 };
 
 const consts2 = {
