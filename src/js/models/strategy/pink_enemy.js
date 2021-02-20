@@ -1,6 +1,7 @@
 import vars from '../../etcs/vars';
+import EnemyBullet from '../enemy_bullet';
 
-export default class {
+class PinkEnemy {
   constructor() {
     this.spriteNum = 13;
   }
@@ -10,4 +11,14 @@ export default class {
     else if (vars.field.jiki.x < enemy.x && enemy.vx < 600) { enemy.vx += 600; }
     enemy.vy = 600;
   }
+
+  fireBullet(enemy, vx, vy) {
+    vars.field.enemyBullets.push(new EnemyBullet(enemy.x, enemy.y, vx, vy, 15)) // 敵の弾番号15
+  }
+
+  spriteNum() {
+    return 13;
+  }
 }
+
+export default PinkEnemy;

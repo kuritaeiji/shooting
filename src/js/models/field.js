@@ -14,10 +14,12 @@ export default class {
     this.jiki = new Jiki();
     this.camera = new Camera(this.jiki);
     this.jiki_bullets = [];
-    this.enemies = [];
 
+    this.enemies = [];
     this.enemyCounter = 0;
     this.enemyTime = 20; // 20フレームに1回敵出現
+
+    this.enemyBullets = [];
   }
 
   update() {
@@ -28,6 +30,7 @@ export default class {
     this.camera.update(this.jiki);
     this.jiki_bullets.forEach((b) => { b.update() });
     this.enemies.forEach((enemy) => { enemy.update() });
+    this.enemyBullets.forEach((b) => { b.update() });
   }
 
   draw() {
@@ -36,6 +39,7 @@ export default class {
     this.jiki_bullets.forEach((b) => { b.draw() });
     this.arrayInstanceVariableUpdate('jiki_bullets');
     this.arrayInstanceVariableUpdate('enemies');
+    this.arrayInstanceVariableUpdate('enemyBullets');
   }
 
   // private
