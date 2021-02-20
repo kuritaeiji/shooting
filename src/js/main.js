@@ -37,7 +37,8 @@ function gameLoop() {
       consts.con.font = '20px "Inpact"';
       consts.con.fillStyle = 'white';
       consts.con.fillText('Enemy:' + vars.field.enemies.length, 20, 20);
-      consts.con.fillText('EBullet:' + vars.field.enemyBullets.length, 20, 40);
+      consts.con.fillText('Bullet:' + vars.field.jiki_bullets.length, 20, 40)
+      consts.con.fillText('EBullet:' + vars.field.enemyBullets.length, 20, 60);
     }
     
 }

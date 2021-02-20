@@ -1,5 +1,4 @@
 import Sprite from './sprite';
-import consts from '../etcs/consts';
 import vars from '../etcs/vars';
 import functions from '../etcs/functions';
 
@@ -19,13 +18,13 @@ export default class {
     if (Math.abs(this.y - vars.field.jiki.y) >> 8 < 100 && !this.isFire) { this.fireBullet(); }
 
     if (this.isFire) {
-      this.enemyType.runAway(this); // 敵の種類によって+y方向に逃げるか、-y方向に逃げるかを変える
+      this.enemyType.runAway(this); // 弾発射後、敵の種類によって+y方向に逃げるか、-y方向に逃げるかを変える
     } else {
       if (this.x > vars.field.jiki.x && -300 < this.vx) { this.vx -= 30; }
       else if (this.x < vars.field.jiki.x && this.vx < 300) { this.vx += 30; }
     }
 
-    if (this.x < 0 || this.x >> 8 > consts.FIELD_W || this.y < 0 || this.y >> 8 > consts.FIELD_H) { this.kill = true; }
+    functions.killOuterField(this)
 
     this.x += this.vx;
     this.y += this.vy;
@@ -35,6 +34,7 @@ export default class {
     Sprite.Sprites[this.enemyType.spriteNum].draw(this.x, this.y);
   }
 
+  // private
   fireBullet() {
     this.isFire = true;
 

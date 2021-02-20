@@ -1,5 +1,5 @@
 import Sprite from './sprite';
-import consts from '../etcs/consts';
+import functions from '../etcs/functions';
 
 export default class {
   constructor(x, y, vx, vy) {
@@ -13,7 +13,7 @@ export default class {
   update() {
     this.x += this.vx;
     this.y += this.vy;
-    if (this.y < 0 || this.x < 0 || (this.x >> 8) > consts.FIELD_W) { this.kill = true; } 
+    functions.killOuterField(this);
   }
 
   draw() {
